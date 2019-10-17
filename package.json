@@ -2,7 +2,7 @@
   "name": "about-me",
   "version": "0.0.1",
   "private": true,
-  "homepage": "http://sokomishalov.github.io",
+  "homepage": "http://sokomishalov.github.io/about-me",
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
