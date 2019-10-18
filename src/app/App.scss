@@ -1,3 +1,58 @@
+$blue: #22BAD9;
+$pink: #FF69B4;
+
+$nameColor: #FF5166;
+$kotlin: #F18E33;
+$java: #b07219;
+$dart: #00B4AB;
+$js: #f1e05a;
+$others: rgba(255, 255, 255, 0.5);
+
 .sokomishalov {
-    margin-top: 100px;
+    text-align: left;
+    line-height: 1.5;
+    font-size: 1.6em;
+    color: $blue;
+
+
+    @media only screen and (max-width: 450px) {
+        padding: 5px 5px;
+    }
+
+    @media only screen and (min-width: 450px) {
+        padding: 40px 60px;
+    }
+
+    .name {
+        color: $nameColor;
+    }
+
+    a {
+        color: $pink;
+    }
+
+    .kotlin {
+        color: $kotlin;
+    }
+
+    .java {
+        color: $java;
+    }
+
+    .js {
+        color: $js;
+    }
+
+    .dart {
+        color: $dart;
+    }
+
+    .others {
+        color: $others;
+    }
+
+    .fan-of {
+        margin-left: 10px;
+    }
+
 }

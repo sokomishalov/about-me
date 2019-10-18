@@ -1,12 +1,8 @@
 body {
+    background: #333;
     margin: 0;
-    padding: 0;
-    text-align: center;
-
-    background: rgba(26, 26, 27, 1);
-    color: rgba(255, 255, 255, 0.65);
 }
 
 body * {
-    font-family: "Sokomishalov", serif;
+    font-family: "Sokomishalov", monospace;
 }
