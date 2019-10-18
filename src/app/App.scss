@@ -11,16 +11,23 @@ $others: rgba(255, 255, 255, 0.5);
 .sokomishalov {
     text-align: left;
     line-height: 1.5;
-    font-size: 1.6em;
+    font-size: 3vw;
     color: $blue;
 
 
-    @media only screen and (max-width: 450px) {
-        padding: 5px 5px;
+    @media only screen and (max-width: 500px) {
+        font-size: 6vw;
+        padding: 10px 10px;
     }
 
-    @media only screen and (min-width: 450px) {
-        padding: 40px 60px;
+    @media only screen and (min-width: 500px) and (max-width: 1000px) {
+        font-size: 4vw;
+        padding: 30px 50px;
+    }
+
+    @media only screen and (min-width: 1000px) {
+        font-size: 2vw;
+        padding: 50px 70px;
     }
 
     .name {
