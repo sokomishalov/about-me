@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 import "react-typist/dist/Typist.css"
+import "./less/antd.css"
 
 import App from './app/App';
 

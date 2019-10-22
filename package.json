@@ -4,6 +4,10 @@
   "private": true,
   "homepage": "http://sokomishalov.github.io/about-me",
   "dependencies": {
+    "antd": "^3.24.2",
+    "antd-mobile": "^2.3.1",
+    "lodash": "~4.17.15",
+    "moment": "~2.24.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "react-reveal": "^1.2.2",
@@ -11,16 +15,21 @@
     "react-typist": "^2.0.5"
   },
   "devDependencies": {
+    "babel-plugin-import": "~1.12.2",
     "customize-cra": "~0.8.0",
     "gh-pages": "^2.1.1",
+    "less": "^3.10.3",
     "node-sass-chokidar": "1.3.5",
     "npm-run-all": "^4.1.5",
     "react-app-rewired": "~2.1.4",
-    "react-scripts": "~3.2.0"
+    "react-scripts": "~3.2.0",
+    "source-map-explorer": "~2.1.0",
+    "webpack-ant-icon-loader": "~1.0.8"
   },
   "scripts": {
-    "watch-css": "node-sass-chokidar src/ -o src/ --watch --recursive",
-    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-less && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "build-css": "npm run build-less && node-sass-chokidar src/ -o src/",
+    "build-less": "lessc --js src/less/antd.less src/less/antd.css",
     "start": "npm-run-all -p watch-css start-js",
     "start-js": "react-app-rewired start",
     "build": "npm run build-css && react-app-rewired build",

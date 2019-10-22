@@ -1,5 +1,6 @@
 $blue: #22BAD9;
 $pink: #FF69B4;
+$gh-link: linear-gradient(to right, #8a2387, #e94057, #f27121);
 
 $nameColor: #FF5166;
 $kotlin: #F18E33;
@@ -7,34 +8,27 @@ $java: #b07219;
 $dart: #00B4AB;
 $js: #f1e05a;
 $others: rgba(255, 255, 255, 0.5);
-.common {
 
+.common {
     text-align: left;
-    line-height: 1.5;
+    line-height: 1.3;
     font-size: 2vw;
     color: $blue;
-
-    @media only screen and (max-width: 500px) {
-        font-size: 6vw;
-        padding: 10px 10px;
-    }
-
-    @media only screen and (min-width: 500px) and (max-width: 1000px) {
-        font-size: 4vw;
-        padding: 30px 50px;
-    }
-
-    @media only screen and (min-width: 1000px) {
-        font-size: 2vw;
-        padding: 50px 70px;
-    }
 
     .name {
         color: $nameColor;
     }
 
-    a {
-        color: $pink;
+    //noinspection CssOverwrittenProperties
+    .github-link {
+        cursor: pointer;
+        background: $gh-link;
+        text-decoration: underline !important;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border-bottom: 1px solid;
+        border-image: $gh-link;
+        border-image-slice: 1;
     }
 
     .kotlin {
