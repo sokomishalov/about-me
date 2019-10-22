@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 import "./App.css"
-import CommonInfo from "./common-info/common-info";
-import Timeline from "./timeline/timeline";
+import CommonInfo from "./common-info/common-info"
+import Timeline from "./timeline/timeline"
+import Fade from "react-reveal/Fade";
 
 const App = () => {
     const [typistDone, setTypistDone] = useState(false)
@@ -9,9 +10,13 @@ const App = () => {
     return (
         <div className="sokomishalov">
             <CommonInfo onTypistDone={() => setTypistDone(true)}/>
-            {typistDone && <Timeline/>}
+            {typistDone
+            && <Fade>
+                <Timeline/>
+            </Fade>
+            }
         </div>
-    );
-};
+    )
+}
 
-export default App;
+export default App
