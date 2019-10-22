@@ -1,3 +1,25 @@
+@import "../../styles/consts.scss";
+
 .timeline {
-    margin-top: 20px;
+    &-step {
+        cursor: pointer;
+
+        .company {
+            &-name {
+                font-size: $big-font-size;
+            }
+
+            &-position {
+                margin-top: 5px;
+                font-size: $medium-font-size;
+                opacity: 0.9;
+            }
+
+            &-years {
+                margin-top: 5px;
+                font-size: $small-font-size;
+                opacity: 0.5;
+            }
+        }
+    }
 }

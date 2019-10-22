@@ -29,7 +29,7 @@
   "scripts": {
     "watch-css": "npm run build-less && node-sass-chokidar src/ -o src/ --watch --recursive",
     "build-css": "npm run build-less && node-sass-chokidar src/ -o src/",
-    "build-less": "lessc --js src/less/antd.less src/less/antd.css",
+    "build-less": "lessc --js src/styles/antd.less src/styles/antd.css",
     "start": "npm-run-all -p watch-css start-js",
     "start-js": "react-app-rewired start",
     "build": "npm run build-css && react-app-rewired build",

@@ -1,33 +1,21 @@
-$blue: #22BAD9;
-$pink: #FF69B4;
-$gh-link: linear-gradient(to right, #8a2387, #e94057, #f27121);
-
-$nameColor: #FF5166;
-$kotlin: #F18E33;
-$java: #b07219;
-$dart: #00B4AB;
-$js: #f1e05a;
-$others: rgba(255, 255, 255, 0.5);
+@import "../../styles/consts.scss";
 
 .common {
     text-align: left;
-    line-height: 1.3;
-    color: $blue;
+    line-height: 1.25;
 
-    .name {
-        color: $nameColor;
+    br {
+        line-height: 2;
     }
 
-    //noinspection CssOverwrittenProperties
+    .name {
+        color: $name-color;
+    }
+
     .github-link {
         cursor: pointer;
-        background: $gh-link;
-        text-decoration: underline !important;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        border-bottom: 1px solid;
-        border-image: $gh-link;
-        border-image-slice: 1;
+        color: $name-color;
+        text-decoration: underline;
     }
 
     .kotlin {

@@ -5,7 +5,6 @@ import {BIRTHDAY, GITHUB_PAGE} from "../../util/consts/consts"
 import moment from "moment"
 import _ from "lodash"
 
-
 const CommonInfo = ({onTypistDone = _.noop}) => {
 
     const age = moment().diff(moment(BIRTHDAY, "DD.MM.YYYY"), 'years').toString();
