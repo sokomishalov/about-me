@@ -12,6 +12,11 @@
         cursor: pointer;
         color: $name-color;
         text-decoration: underline;
+        text-decoration-style: dashed;
+    }
+
+    .github-link:hover {
+        text-decoration-style: solid;
     }
 
     .kotlin {

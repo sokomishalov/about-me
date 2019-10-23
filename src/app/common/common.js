@@ -1,38 +1,34 @@
 import React from 'react'
 import "./common.css"
 import Typist from "react-typist"
-import {BIRTHDAY, GH_PAGE} from "../../util/consts/consts"
-import moment from "moment"
+import {GH_PAGE} from "../../util/consts/consts"
 import _ from "lodash"
+import {getMyAge} from "../../util/date/date";
 
-const Common = ({onTypistDone = _.noop}) => {
-
-    const age = moment().diff(moment(BIRTHDAY, "DD.MM.YYYY"), 'years').toString();
-
-    return (
-        <div className="common">
-            <Typist startDelay={1500}
-                    avgTypingDelay={45}
-                    cursor={{hideWhenDone: true}}
-                    onTypingDone={onTypistDone}>
+const Common = ({onTypistDone = _.noop}) => (
+    <div className="common">
+        <Typist startDelay={1500}
+                avgTypingDelay={45}
+                cursor={{hideWhenDone: true}}
+                onTypingDone={onTypistDone}>
                 <span>
                     Hi!
                 </span>
 
-                <br/>
-                <Typist.Delay ms={500}/>
+            <br/>
+            <Typist.Delay ms={500}/>
 
-                <span>
+            <span>
                     My name is <span className="name">Mikhael Sokolov </span> aka&nbsp;
-                    <span className="github-link" onClick={() => window.open(GH_PAGE, "_blank")}>
+                <span className="github-link" onClick={() => window.open(GH_PAGE, "_blank")}>
                         sokomishalov
                     </span>
                 </span>
 
-                <br/>
-                <Typist.Delay ms={500}/>
+            <br/>
+            <Typist.Delay ms={500}/>
 
-                <span>
+            <span>
                     Software engineer, mostly
                     <span className="kotlin"> Kotlin</span>/
                     <span className="java">Java</span>/
@@ -40,36 +36,33 @@ const Common = ({onTypistDone = _.noop}) => {
                     <span className="dart">Dart</span>/
                     <span className="others">etc.</span>
                 </span>
-                <br/>
+            <br/>
 
-                <Typist.Delay ms={500}/>
-                <span>
-                    I am {age} y.o., born and live in Moscow, Russia
+            <Typist.Delay ms={500}/>
+            <span>
+                    I am {getMyAge()} y.o., born and live in Moscow, Russia
                 </span>
-                <br/>
+            <br/>
 
-                <Typist.Delay ms={500}/>
-                <span>
-                    Fan of:
-                </span>
-                <br/>
-                <span className="fan-of">* coding</span>
-                <br/>
-                <span className="fan-of">* films, series and video games</span>
-                <br/>
-                <span className="fan-of">* football (it's not soccer!!!)</span>
-                <br/>
-                <span className="fan-of">* memes</span>
-                <br/>
-                <span className="fan-of">* sarcasm</span>
-                <br/>
-                <span className="fan-of">* drinking vodka</span>
-                <Typist.Backspace count={14} delay={500}/>
-                chilling out
-                <br/>
-            </Typist>
-        </div>
-    );
-};
+            <Typist.Delay ms={500}/>
+            <span>
+                Fan of:
+            </span>
+            <br/>
+            <span className="fan-of">* coding</span>
+            <br/>
+            <span className="fan-of">* films, series and video games</span>
+            <br/>
+            <span className="fan-of">* football (it's not soccer !!!)</span>
+            <br/>
+            <span className="fan-of">* memes</span>
+            <br/>
+            <span className="fan-of">* sarcasm</span>
+            <br/>
+            <span className="fan-of">* drinking vodka <Typist.Backspace count={16} delay={500}/> chilling out</span>
+            <br/>
+        </Typist>
+    </div>
+);
 
 export default Common;

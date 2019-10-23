@@ -1,8 +1,16 @@
+@font-face {
+    font-family: 'SokoMishaLov';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SokoMishaLov'), local('SokoMishaLov Regular'), local('SokoMishaLov-Regular'), url("./fonts/Courgette-Regular.ttf") format('ttf');
+}
+
 body {
     background: #333;
     margin: 0;
 }
 
 body * {
-    font-family: "Sokomishalov", monospace;
+    //font-family: "SokoMishaLov", cursive;
+    font-family: monospace;
 }
