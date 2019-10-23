@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
 import "./App.css"
-import {Divider} from "antd";
-import Fade from "react-reveal/Fade";
+import {Divider} from "antd"
+import Fade from "react-reveal/Fade"
 import Timeline from "./timeline/timeline"
-import Contacts from "./contacts/contacts";
-import Activity from "./activity/activity";
-import Common from "./common/common";
+import Contacts from "./contacts/contacts"
+import Activity from "./activity/activity"
+import Common from "./common/common"
 
 const App = () => {
     const [typistDone, setTypistDone] = useState(false)

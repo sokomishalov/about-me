@@ -37,34 +37,32 @@ const COMPANIES = [
     }
 ]
 
-const Timeline = () => {
-
-    return (
-        <div className="timeline">
-            <div>Timeline</div>
-            <Steps direction="vertical"
-                   labelPlacement="vertical"
-                   className="steps">
-                {_.map(COMPANIES, c => (
-                    <Steps.Step title={<div className="company-name">{c["name"]}</div>}
-                                description={
-                                    <>
-                                        <div className="company-position">{c["position"]}</div>
-                                        <div className="company-years">{c["years"]}</div>
-                                    </>
-                                }
-                                icon={(
-                                    <img src={c["logo"]}
-                                         width={20}
-                                         height={20}
-                                         alt=""/>
-                                )}
-                                className="timeline-step"
-                                onClick={() => window.open(c["companyLink"], "_blank")}/>
-                ))}
-            </Steps>
-        </div>
-    );
-};
+const Timeline = () => (
+    <div className="timeline">
+        <div>Timeline</div>
+        <Steps direction="vertical"
+               labelPlacement="vertical"
+               className="steps">
+            {_.map(COMPANIES, c => (
+                <Steps.Step key={c["name"]}
+                            title={<div className="company-name">{c["name"]}</div>}
+                            description={
+                                <>
+                                    <div className="company-position">{c["position"]}</div>
+                                    <div className="company-years">{c["years"]}</div>
+                                </>
+                            }
+                            icon={(
+                                <img src={c["logo"]}
+                                     width={20}
+                                     height={20}
+                                     alt=""/>
+                            )}
+                            className="timeline-step"
+                            onClick={() => window.open(c["companyLink"], "_blank")}/>
+            ))}
+        </Steps>
+    </div>
+);
 
 export default Timeline;

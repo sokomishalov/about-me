@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faFacebookF, faGithub, faInstagram, faTelegram, faVk} from "@fortawesome/free-brands-svg-icons"
 import _ from "lodash"
 import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
-import {downloadResource, openPage} from "../../util/window/window";
+import {openPage} from "../../util/window/window";
 import CV from "../../images/cv.pdf"
 
 const PIC_SIZE = 250;
@@ -16,7 +16,7 @@ const SOCIALS = [
         icon: <Avatar style={{backgroundColor: "rgba(43,43,43,0.67)"}}>CV</Avatar>,
         color: "rgba(43,43,43,0.67)",
         tip: "My CV",
-        onClick: async () => await downloadResource(CV, "sokomishalov-cv.pdf"),
+        onClick: () => openPage(CV)
     },
     {
         icon: <FontAwesomeIcon icon={faFacebookF}/>,
@@ -73,7 +73,9 @@ const Contacts = () => (
             </Card>
             <div className="contacts-socials">
                 {_.map(SOCIALS, s => (
-                    <Tooltip title={s["tip"]} placement="right">
+                    <Tooltip key={s["tip"]}
+                             title={s["tip"]}
+                             placement="right">
                         <Button shape="circle"
                                 size="large"
                                 className="contacts-socials-button"
