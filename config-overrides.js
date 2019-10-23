@@ -18,10 +18,6 @@ module.exports = function override(config) {
         fixBabelImports("antd", {
             libraryName: "antd",
             libraryDirectory: "es"
-        }),
-        fixBabelImports("antd-mobile", {
-            libraryName: "antd-mobile",
-            libraryDirectory: "es"
         })
     )(config);
 };
