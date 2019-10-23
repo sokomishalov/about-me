@@ -12,17 +12,20 @@
         .company {
             &-name {
                 font-size: $big-font-size;
+                color: $font-color;
             }
 
             &-position {
                 margin-top: 5px;
                 font-size: $medium-font-size;
+                color: $font-color;
                 opacity: 0.9;
             }
 
             &-years {
                 margin-top: 5px;
                 font-size: $small-font-size;
+                color: $font-color;
                 opacity: 0.5;
             }
         }
