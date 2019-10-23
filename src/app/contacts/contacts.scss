@@ -1,9 +1,9 @@
 .contacts {
-    display: flex;
-    justify-content: start;
 
-    &-card {
-
+    &-content {
+        margin-top: 20px;
+        display: flex;
+        justify-content: start;
     }
 
     &-socials {

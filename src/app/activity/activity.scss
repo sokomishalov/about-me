@@ -1,0 +1,53 @@
+@import "../../styles/consts.scss";
+
+.activity {
+
+    &-projects {
+        display: flex;
+        flex-flow: row wrap;
+
+        .project {
+            margin: 20px;
+            width: 350px;
+            height: 150px;
+
+            .ant-card-body {
+                height: 100%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            &-name {
+                font-size: $medium-font-size;
+            }
+
+            &-description {
+                opacity: 0.8;
+                margin: 10px 0;
+            }
+
+            &-badges {
+                display: flex;
+                justify-content: start;
+
+                .count {
+                    margin-left: 3px;
+                }
+
+                .watchers {
+
+                }
+
+                .stars {
+                    margin-left: 15px;
+                }
+
+                .forks {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}

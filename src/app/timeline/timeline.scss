@@ -1,6 +1,11 @@
 @import "../../styles/consts.scss";
 
 .timeline {
+
+    .steps {
+        margin-top: 20px;
+    }
+
     &-step {
         cursor: pointer;
 

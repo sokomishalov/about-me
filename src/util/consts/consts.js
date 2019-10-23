@@ -1,5 +1,7 @@
 export const BIRTHDAY = "10.07.1995";
 
+export const USERNAME = "sokomishalov"
+
 export const GH_PAGE = "https://github.com/sokomishalov";
 export const FB_PAGE = "https://www.facebook.com/sokomishalov";
 export const VK_PAGE = "https://vk.com/sokomishalov";

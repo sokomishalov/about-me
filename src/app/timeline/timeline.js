@@ -41,7 +41,10 @@ const Timeline = () => {
 
     return (
         <div className="timeline">
-            <Steps direction="vertical" labelPlacement="vertical">
+            <div>Timeline</div>
+            <Steps direction="vertical"
+                   labelPlacement="vertical"
+                   className="steps">
                 {_.map(COMPANIES, c => (
                     <Steps.Step title={<div className="company-name">{c["name"]}</div>}
                                 description={

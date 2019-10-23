@@ -1,7 +1,7 @@
 import React from 'react'
 import "./common.css"
 import Typist from "react-typist"
-import {GH_PAGE} from "../../util/consts/consts"
+import {GH_PAGE, USERNAME} from "../../util/consts/consts"
 import _ from "lodash"
 import {getMyAge} from "../../util/date/date";
 
@@ -21,7 +21,7 @@ const Common = ({onTypistDone = _.noop}) => (
             <span>
                     My name is <span className="name">Mikhael Sokolov </span> aka&nbsp;
                 <span className="github-link" onClick={() => window.open(GH_PAGE, "_blank")}>
-                        sokomishalov
+                        ${USERNAME}
                     </span>
                 </span>
 

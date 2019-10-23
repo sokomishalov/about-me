@@ -58,30 +58,32 @@ const SOCIALS = [
 
 const Contacts = () => (
     <div className="contacts">
-        <Card className="contacts-card"
-              hoverable
-              style={{width: PIC_SIZE}}
-              onClick={() => openPage(GH_PAGE)}
-              cover={
-                  <img alt=""
-                       width={PIC_SIZE}
-                       height={PIC_SIZE}
-                       src={`${GH_PAGE}.png?size=${PIC_SIZE}`}/>
-              }>
-            <Card.Meta title="sokomishalov" description="github.com"/>
-        </Card>
-        <div className="contacts-socials">
-            {_.map(SOCIALS, s => (
-                <Tooltip title={s["tip"]} placement="right">
-                    <Button shape="circle"
-                            size="large"
-                            className="contacts-socials-button"
-                            style={{background: s["color"]}}
-                            onClick={s["onClick"]}>
-                        <FontAwesomeIcon icon={s["icon"]}/>
-                    </Button>
-                </Tooltip>
-            ))}
+        <div>Contacts</div>
+        <div className="contacts-content">
+            <Card hoverable
+                  style={{width: PIC_SIZE}}
+                  onClick={() => openPage(GH_PAGE)}
+                  cover={
+                      <img alt=""
+                           width={PIC_SIZE}
+                           height={PIC_SIZE}
+                           src={`${GH_PAGE}.png?size=${PIC_SIZE}`}/>
+                  }>
+                <Card.Meta title="sokomishalov" description="github.com"/>
+            </Card>
+            <div className="contacts-socials">
+                {_.map(SOCIALS, s => (
+                    <Tooltip title={s["tip"]} placement="right">
+                        <Button shape="circle"
+                                size="large"
+                                className="contacts-socials-button"
+                                style={{background: s["color"]}}
+                                onClick={s["onClick"]}>
+                            <FontAwesomeIcon icon={s["icon"]}/>
+                        </Button>
+                    </Tooltip>
+                ))}
+            </div>
         </div>
     </div>
 );
