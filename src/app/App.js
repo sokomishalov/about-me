@@ -5,14 +5,15 @@ import Fade from "react-reveal/Fade";
 import Timeline from "./timeline/timeline"
 import Contacts from "./contacts/contacts";
 import Activity from "./activity/activity";
+import Common from "./common/common";
 
 const App = () => {
-    const [typistDone, setTypistDone] = useState(true)
+    const [typistDone, setTypistDone] = useState(false)
 
     return (
         <div className="sokomishalov">
-            {/*<Common onTypistDone={() => setTypistDone(true)}/>*/}
-            { (
+            <Common onTypistDone={() => setTypistDone(true)}/>
+            {typistDone && (
                 <Fade>
                     <SectionDivider/>
                     <Contacts/>
