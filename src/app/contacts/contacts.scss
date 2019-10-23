@@ -1,0 +1,22 @@
+.contacts {
+    display: flex;
+    justify-content: start;
+
+    &-card {
+
+    }
+
+    &-socials {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-left: 40px;
+
+        &-button:hover,
+        &-button:focus,
+        &-button:active {
+            color: white;
+            border: 1px solid white;
+        }
+    }
+}

@@ -1,24 +1,29 @@
 import React, {useState} from 'react'
 import "./App.css"
-import CommonInfo from "./common-info/common-info"
+import Common from "./common/common"
 import Timeline from "./timeline/timeline"
 import Fade from "react-reveal/Fade";
 import {Divider} from "antd";
+import Contacts from "./contacts/contacts";
 
 const App = () => {
     const [typistDone, setTypistDone] = useState(false)
 
     return (
         <div className="sokomishalov">
-            <CommonInfo onTypistDone={() => setTypistDone(true)}/>
+            <Common onTypistDone={() => setTypistDone(true)}/>
             {typistDone && (
                 <Fade>
-                    <Divider style={{margin: "30px 0"}}/>
+                    <SectionDivider/>
+                    <Contacts/>
+                    <SectionDivider/>
                     <Timeline/>
                 </Fade>
             )}
         </div>
     )
 }
+
+const SectionDivider = () => <Divider style={{margin: "30px 0"}}/>
 
 export default App

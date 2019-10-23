@@ -1,11 +1,11 @@
 import React from 'react'
-import "./common-info.css"
+import "./common.css"
 import Typist from "react-typist"
-import {BIRTHDAY, GITHUB_PAGE} from "../../util/consts/consts"
+import {BIRTHDAY, GH_PAGE} from "../../util/consts/consts"
 import moment from "moment"
 import _ from "lodash"
 
-const CommonInfo = ({onTypistDone = _.noop}) => {
+const Common = ({onTypistDone = _.noop}) => {
 
     const age = moment().diff(moment(BIRTHDAY, "DD.MM.YYYY"), 'years').toString();
 
@@ -24,7 +24,7 @@ const CommonInfo = ({onTypistDone = _.noop}) => {
 
                 <span>
                     My name is <span className="name">Mikhael Sokolov </span> aka&nbsp;
-                    <span className="github-link" onClick={() => window.open(GITHUB_PAGE, "_blank")}>
+                    <span className="github-link" onClick={() => window.open(GH_PAGE, "_blank")}>
                         sokomishalov
                     </span>
                 </span>
@@ -72,4 +72,4 @@ const CommonInfo = ({onTypistDone = _.noop}) => {
     );
 };
 
-export default CommonInfo;
+export default Common;
