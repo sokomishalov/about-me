@@ -21,7 +21,7 @@ const Common = ({onTypistDone = _.noop}) => (
             <span>
                     My name is <span className="name">Mikhael Sokolov </span> aka&nbsp;
                 <span className="github-link" onClick={() => window.open(GH_PAGE, "_blank")}>
-                        ${USERNAME}
+                        {USERNAME}
                     </span>
                 </span>
 
