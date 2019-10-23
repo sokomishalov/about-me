@@ -2,15 +2,13 @@
     font-family: 'SokoMishaLov';
     font-style: normal;
     font-weight: normal;
-    src: local('SokoMishaLov'), local('SokoMishaLov Regular'), local('SokoMishaLov-Regular'), url("./fonts/Courgette-Regular.ttf") format('ttf');
+    src: local('SokoMishaLov'), local('SokoMishaLov Regular'), local('SokoMishaLov-Regular'), url("./fonts/RobotoMono.ttf") format('ttf');
 }
 
 body {
-    background: #333;
     margin: 0;
 }
 
 body * {
-    //font-family: "SokoMishaLov", cursive;
-    font-family: monospace;
+    font-family: "SokoMishaLov", monospace;
 }
