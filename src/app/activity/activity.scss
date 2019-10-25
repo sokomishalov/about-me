@@ -34,8 +34,8 @@
                 display: flex;
                 justify-content: start;
 
-                .count {
-                    margin-left: 3px;
+                .caption {
+                    margin-left: 5px;
                 }
 
                 .watchers {
@@ -48,6 +48,18 @@
 
                 .forks {
                     margin-left: 15px;
+                }
+
+                .language {
+                    margin-left: 20px;
+                    display: flex;
+                    align-items: center;
+
+                    &-color {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                    }
                 }
             }
         }
