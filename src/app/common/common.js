@@ -4,6 +4,7 @@ import Typist from "react-typist"
 import {GH_PAGE, USERNAME} from "../../util/consts/consts"
 import _ from "lodash"
 import {getMyAge} from "../../util/date/date";
+import {getColorByLanguage} from "../../util/github/github";
 
 const Common = ({onTypistDone = _.noop}) => (
     <div className="common">
@@ -29,13 +30,13 @@ const Common = ({onTypistDone = _.noop}) => (
             <Typist.Delay ms={500}/>
 
             <span>
-                    Software engineer, mostly
-                    <span className="kotlin"> Kotlin</span>/
-                    <span className="java">Java</span>/
-                    <span className="js">JS</span>/
-                    <span className="dart">Dart</span>/
-                    <span className="others">etc.</span>
-                </span>
+                Software engineer, mostly
+                <span style={{color: getColorByLanguage("Kotlin")}}> Kotlin</span>/
+                <span style={{color: getColorByLanguage("Java")}}>Java</span>/
+                <span style={{color: getColorByLanguage("JavaScript")}}>JS</span>/
+                <span style={{color: getColorByLanguage("Dart")}}>Dart</span>/
+                <span>etc.</span>
+            </span>
             <br/>
 
             <Typist.Delay ms={500}/>

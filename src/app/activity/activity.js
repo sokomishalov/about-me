@@ -5,6 +5,7 @@ import Fade from "react-reveal/Fade"
 import _ from "lodash"
 import {Card, Icon} from "antd"
 import {openPage} from "../../util/window/window";
+import {getColorByLanguage} from "../../util/github/github";
 
 const Activity = () => {
 
@@ -37,18 +38,26 @@ const Activity = () => {
                                 <div className="project-badges">
                                     <div className="watchers">
                                         <Icon type="eye"/>
-                                        <span className="count">{it["watchers_count"]}</span>
+                                        <span className="caption">{it["watchers_count"]}</span>
                                     </div>
 
                                     <div className="stars">
                                         <Icon type="star"/>
-                                        <span className="count">{it["stargazers_count"]}</span>
+                                        <span className="caption">{it["stargazers_count"]}</span>
                                     </div>
 
                                     <div className="forks">
                                         <Icon type="fork"/>
-                                        <span className="count">{it["forks_count"]}</span>
+                                        <span className="caption">{it["forks_count"]}</span>
                                     </div>
+
+                                    {!_.isEmpty(it["language"]) &&
+                                    <div className="language">
+                                        <div className="language-color"
+                                              style={{backgroundColor: getColorByLanguage(it["language"])}}/>
+                                        <span className="caption">{it["language"]}</span>
+                                    </div>
+                                    }
                                 </div>
                             </Card>
                         ))}

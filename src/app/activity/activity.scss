@@ -10,6 +10,8 @@
             margin: 20px;
             width: 350px;
             height: 150px;
+            white-space: pre-wrap;
+            overflow: hidden;
 
             .ant-card-body {
                 height: 100%;
@@ -20,7 +22,7 @@
             }
 
             &-name {
-                font-size: $medium-font-size;
+                font-size: 1.1rem;
             }
 
             &-description {
@@ -32,12 +34,12 @@
                 display: flex;
                 justify-content: start;
 
-                .count {
-                    margin-left: 3px;
+                .caption {
+                    margin-left: 5px;
                 }
 
                 .watchers {
-
+                    margin: 0;
                 }
 
                 .stars {
@@ -46,6 +48,18 @@
 
                 .forks {
                     margin-left: 15px;
+                }
+
+                .language {
+                    margin-left: 20px;
+                    display: flex;
+                    align-items: center;
+
+                    &-color {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                    }
                 }
             }
         }
