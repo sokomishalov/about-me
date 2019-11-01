@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import "./App.css"
-import {Divider} from "antd"
+import { Divider } from "antd"
 import Fade from "react-reveal/Fade"
 import Timeline from "./timeline/timeline"
 import Contacts from "./contacts/contacts"
@@ -12,8 +12,8 @@ const App = () => {
 
     return (
         <div className="sokomishalov">
-            <Common onTypistDone={() => setTypistDone(true)}/>
-            {typistDone && (
+            <Common onTypistDone={ () => setTypistDone(true) }/>
+            { typistDone && (
                 <Fade>
                     <SectionDivider/>
                     <Contacts/>
@@ -22,11 +22,11 @@ const App = () => {
                     <SectionDivider/>
                     <Activity/>
                 </Fade>
-            )}
+            ) }
         </div>
     )
 }
 
-const SectionDivider = () => <Divider style={{margin: "30px 0"}}/>
+const SectionDivider = () => <Divider style={ {margin: "30px 0"} }/>
 
 export default App

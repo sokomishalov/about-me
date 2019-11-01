@@ -1,6 +1,6 @@
 import React from 'react'
 import "./timeline.css"
-import {Steps} from "antd"
+import { Steps } from "antd"
 import SberbankLogo from "../../images/sber.png"
 import VtbLogo from "../../images/vtb.png"
 import BmstuLogo from "../../images/bmstu.png"
@@ -43,24 +43,24 @@ const Timeline = () => (
         <Steps direction="vertical"
                labelPlacement="vertical"
                className="steps">
-            {_.map(COMPANIES, c => (
-                <Steps.Step key={c["name"]}
-                            title={<div className="company-name">{c["name"]}</div>}
+            { _.map(COMPANIES, c => (
+                <Steps.Step key={ c["name"] }
+                            title={ <div className="company-name">{ c["name"] }</div> }
                             description={
                                 <>
-                                    <div className="company-position">{c["position"]}</div>
-                                    <div className="company-years">{c["years"]}</div>
+                                    <div className="company-position">{ c["position"] }</div>
+                                    <div className="company-years">{ c["years"] }</div>
                                 </>
                             }
-                            icon={(
-                                <img src={c["logo"]}
-                                     width={20}
-                                     height={20}
+                            icon={ (
+                                <img src={ c["logo"] }
+                                     width={ 20 }
+                                     height={ 20 }
                                      alt=""/>
-                            )}
+                            ) }
                             className="timeline-step"
-                            onClick={() => window.open(c["companyLink"], "_blank")}/>
-            ))}
+                            onClick={ () => window.open(c["companyLink"], "_blank") }/>
+            )) }
         </Steps>
     </div>
 );
