@@ -3,7 +3,7 @@ import { graphql } from "@octokit/graphql";
 
 const githubGraphRequest = graphql.defaults({
     headers: {
-        authorization: `Basic ${ btoa(`${ process.env.REACT_APP_GITHUB_USERNAME }:${ process.env.REACT_APP_GITHUB_PASSWORD }`) }`
+        authorization: `Bearer ${ process.env.REACT_APP_GITHUB_TOKEN_PART_1 }${ process.env.REACT_APP_GITHUB_TOKEN_PART_2 }`
     }
 });
 
