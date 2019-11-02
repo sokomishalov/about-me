@@ -35,26 +35,26 @@ const Activity = () => {
                           onClick={ () => openPage(it["url"]) }>
                         <div className="project-name">{ _.toLower(it["nameWithOwner"]) }</div>
                         <div className="project-description">{ it["description"] }</div>
-                        <div className="project-badges">
-                            <div className="watchers">
-                                <Icon type="eye"/>
-                                <span className="caption">{ _.get(it, "watchers.totalCount") }</span>
-                            </div>
+                        <div className="project-bottom">
+                            <div className="project-bottom-badges">
+                                <div className="watchers">
+                                    <Icon type="eye"/>
+                                    <span className="caption">{ _.get(it, "watchers.totalCount") }</span>
+                                </div>
 
-                            <div className="stars">
-                                <Icon type="star"/>
-                                <span className="caption">{ _.get(it, "stargazers.totalCount") }</span>
-                            </div>
+                                <div className="stars">
+                                    <Icon type="star"/>
+                                    <span className="caption">{ _.get(it, "stargazers.totalCount") }</span>
+                                </div>
 
-                            <div className="forks">
-                                <Icon type="fork"/>
-                                <span className="caption">{ _.get(it, "forks.totalCount") }</span>
+                                <div className="forks">
+                                    <Icon type="fork"/>
+                                    <span className="caption">{ _.get(it, "forks.totalCount") }</span>
+                                </div>
                             </div>
-
                             <div className="language">
-                                <div className="language-color"
-                                     style={ {backgroundColor: _.get(mainLang(it), "color")} }/>
-                                <span className="caption">{ _.get(mainLang(it), "name") }</span>
+                                <div className="language-color" style={ {backgroundColor: _.get(mainLang(it), "color")} }/>
+                                <div className="caption">{ _.get(mainLang(it), "name") }</div>
                             </div>
                         </div>
                     </Card>

@@ -15,7 +15,7 @@
 
             .ant-card-body {
                 height: 100%;
-                padding: 20px;
+                padding: 15px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -30,32 +30,38 @@
                 margin: 10px 0;
             }
 
-            &-badges {
+            &-bottom {
                 display: flex;
-                justify-content: start;
+                justify-content: space-between;
+                align-items: center;
 
-                .caption {
-                    margin-left: 5px;
-                }
+                &-badges {
+                    display: flex;
+                    justify-content: start;
 
-                .watchers {
-                    margin: 0;
-                }
+                    .caption {
+                        margin-left: 5px;
+                    }
 
-                .stars {
-                    margin-left: 15px;
-                }
+                    .watchers {
+                        margin: 0;
+                    }
 
-                .forks {
-                    margin-left: 15px;
+                    .stars {
+                        margin-left: 15px;
+                    }
+
+                    .forks {
+                        margin-left: 15px;
+                    }
                 }
 
                 .language {
-                    margin-left: 20px;
                     display: flex;
                     align-items: center;
 
                     &-color {
+                        margin-right: 5px;
                         width: 12px;
                         height: 12px;
                         border-radius: 50%;
