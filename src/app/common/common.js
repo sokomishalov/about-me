@@ -8,8 +8,8 @@ import { getColorByLanguage } from "../../util/github/github";
 
 const Common = ({onTypistDone = _.noop}) => (
     <div className="common">
-        <Typist startDelay={ 1500 }
-                avgTypingDelay={ 45 }
+        <Typist startDelay={ 1000 }
+                avgTypingDelay={ 25 }
                 cursor={ {hideWhenDone: true} }
                 onTypingDone={ onTypistDone }>
                 <span>
@@ -17,7 +17,7 @@ const Common = ({onTypistDone = _.noop}) => (
                 </span>
 
             <br/>
-            <Typist.Delay ms={ 500 }/>
+            <Typist.Delay ms={ 300 }/>
 
             <span>
                     My name is <span className="name">Mikhael Sokolov </span> aka&nbsp;
@@ -27,7 +27,7 @@ const Common = ({onTypistDone = _.noop}) => (
                 </span>
 
             <br/>
-            <Typist.Delay ms={ 500 }/>
+            <Typist.Delay ms={ 300 }/>
 
             <span>
                 Software engineer, mostly
@@ -39,13 +39,13 @@ const Common = ({onTypistDone = _.noop}) => (
             </span>
             <br/>
 
-            <Typist.Delay ms={ 500 }/>
+            <Typist.Delay ms={ 300 }/>
             <span>
                     I am { getMyAge() } y.o., born and live in Moscow, Russia
                 </span>
             <br/>
 
-            <Typist.Delay ms={ 500 }/>
+            <Typist.Delay ms={ 300 }/>
             <span>
                 Fan of:
             </span>

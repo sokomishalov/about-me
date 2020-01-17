@@ -27,7 +27,7 @@ const Activity = () => {
 
     const renderProjects = (data) => (
         <div className="activity-projects">
-            { _.orderBy(data, ["stargazers.totalCount"], ["desc"])
+            { _.orderBy(data, ["watchers.totalCount", "forks.totalCount"], ["desc"])
                 .map(it => (
                     <Card key={ it["id"] }
                           hoverable
@@ -53,7 +53,8 @@ const Activity = () => {
                                 </div>
                             </div>
                             <div className="language">
-                                <div className="language-color" style={ {backgroundColor: _.get(mainLang(it), "color")} }/>
+                                <div className="language-color"
+                                     style={ {backgroundColor: _.get(mainLang(it), "color")} }/>
                                 <div className="caption">{ _.get(mainLang(it), "name") }</div>
                             </div>
                         </div>
