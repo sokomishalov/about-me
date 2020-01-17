@@ -27,7 +27,7 @@ const Activity = () => {
 
     const renderProjects = (data) => (
         <div className="activity-projects">
-            { _.orderBy(data, ["watchers.totalCount", "forks.totalCount"], ["desc"])
+            { _.orderBy(data, ["stargazers.totalCount", "watchers.totalCount", "forks.totalCount"], ["desc"])
                 .map(it => (
                     <Card key={ it["id"] }
                           hoverable
