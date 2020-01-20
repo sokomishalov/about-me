@@ -1,0 +1,19 @@
+.project {
+
+    &-desc {
+        margin-bottom: 10px;
+    }
+
+    &-link {
+
+    }
+
+    &-md {
+        margin-top: 15px;
+
+        &-loader {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

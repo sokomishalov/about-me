@@ -13,6 +13,12 @@ export const getMyContributions = async () => await githubGraphRequest(myContrib
 
 export const getMyProjects = async () => await githubGraphRequest(myProjectsRequest)
 
+export const loadProjectReadme = async (nameWithOwner) => {
+    const resp = await fetch(`https://api.github.com/repos/${ nameWithOwner }/readme`)
+    const json = await resp.json()
+    return atob(json["content"])
+}
+
 const myContributionsRequest = `
 {
   viewer {
