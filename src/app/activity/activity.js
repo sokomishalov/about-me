@@ -25,8 +25,6 @@ const Activity = () => {
         })
     }, [])
 
-    const mainLang = (it) => _.get(it, "languages.nodes[0]", {})
-
     const openProjectModal = (project) => {
         Modal.info({
             maskClosable: true,
@@ -46,30 +44,31 @@ const Activity = () => {
                           hoverable
                           className="project"
                           onClick={ () => openProjectModal(it) }>
-                        <div className="project-name">{ _.toLower(it["nameWithOwner"]) }</div>
+                        <div className="project-name">{ it["name"] }</div>
                         <div className="project-description">{ it["description"] }</div>
-                        <div className="project-bottom">
-                            <div className="project-bottom-badges">
-                                <div className="watchers">
-                                    <Icon type="eye"/>
-                                    <span className="caption">{ _.get(it, "watchers.totalCount") }</span>
-                                </div>
-
-                                <div className="stars">
-                                    <Icon type="star"/>
-                                    <span className="caption">{ _.get(it, "stargazers.totalCount") }</span>
-                                </div>
-
-                                <div className="forks">
-                                    <Icon type="fork"/>
-                                    <span className="caption">{ _.get(it, "forks.totalCount") }</span>
-                                </div>
+                        <div className="project-icons">
+                            <div className="watchers">
+                                <Icon type="eye"/>
+                                <span className="caption">{ _.get(it, "watchers.totalCount") }</span>
                             </div>
-                            <div className="language">
-                                <div className="language-color"
-                                     style={ {backgroundColor: _.get(mainLang(it), "color")} }/>
-                                <div className="caption">{ _.get(mainLang(it), "name") }</div>
+
+                            <div className="stars">
+                                <Icon type="star"/>
+                                <span className="caption">{ _.get(it, "stargazers.totalCount") }</span>
                             </div>
+
+                            <div className="forks">
+                                <Icon type="fork"/>
+                                <span className="caption">{ _.get(it, "forks.totalCount") }</span>
+                            </div>
+                        </div>
+                        <div className="project-languages">
+                            { _.map(_.get(it, "languages.nodes", []), o => (
+                                <div className="language" key={ o["color"] }>
+                                    <div className="language-color" style={ {backgroundColor: o["color"]} }/>
+                                    <div className="caption">{ o["name"] }</div>
+                                </div>
+                            )) }
                         </div>
                     </Card>
                 )) }

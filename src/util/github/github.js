@@ -25,6 +25,7 @@ const myContributionsRequest = `
     repositoriesContributedTo(first: 100, contributionTypes: [REPOSITORY, COMMIT, PULL_REQUEST, PULL_REQUEST_REVIEW], privacy: PUBLIC) {
       nodes {
         id
+        name
         nameWithOwner
         owner {
           login
@@ -59,6 +60,7 @@ const myProjectsRequest = `
     repositories(first: 100, privacy: PUBLIC, isFork: false) {
       nodes {
         id
+        name
         nameWithOwner
         owner {
           login
@@ -74,7 +76,7 @@ const myProjectsRequest = `
         stargazers {
           totalCount
         }
-        languages(first: 1, orderBy: {field: SIZE, direction: DESC}) {
+        languages(first: 3, orderBy: {field: SIZE, direction: DESC}) {
           nodes {
             color
             name

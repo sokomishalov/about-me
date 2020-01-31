@@ -9,14 +9,14 @@
         .project {
             margin: 20px;
             width: 350px;
-            height: 150px;
+            height: 160px;
             font-size: 13px;
             white-space: pre-wrap;
             overflow: hidden;
 
             .ant-card-body {
                 height: 100%;
-                padding: 15px;
+                padding: 10px;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -28,36 +28,38 @@
 
             &-description {
                 opacity: 0.8;
-                margin: 10px 0;
+                height: 65px;
+                margin: 7px 0;
             }
 
-            &-bottom {
+            &-icons {
                 display: flex;
-                justify-content: space-between;
-                align-items: center;
+                justify-content: flex-start;
 
-                &-badges {
-                    display: flex;
-                    justify-content: flex-start;
-
-                    .caption {
-                        margin-left: 5px;
-                    }
-
-                    .watchers {
-                        margin: 0;
-                    }
-
-                    .stars {
-                        margin-left: 15px;
-                    }
-
-                    .forks {
-                        margin-left: 15px;
-                    }
+                .caption {
+                    margin-left: 5px;
                 }
 
+                .watchers {
+                    margin: 0;
+                }
+
+                .stars {
+                    margin-left: 15px;
+                }
+
+                .forks {
+                    margin-left: 15px;
+                }
+            }
+
+            &-languages {
+                margin-top: 5px;
+                display: flex;
+                align-items: center;
+
                 .language {
+                    margin-right: 10px;
                     display: flex;
                     align-items: center;
 
