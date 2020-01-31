@@ -3,20 +3,26 @@ import "./activity.css"
 import Fade from "react-reveal/Fade"
 import _ from "lodash"
 import { Card, Icon, Modal } from "antd"
-import { getMyContributions } from "../../util/github/github";
+import { getMyContributions, getMyProjects } from "../../util/github/github";
 import ProjectDescription from "./project-description";
-import { USERNAME } from "../../util/consts/consts";
 
 const Activity = () => {
 
     const [loading, setLoading] = useState(true)
-    const [projects, setProjects] = useState([])
+    const [contributedProjects, setContributedProjects] = useState([])
+    const [myProjects, setMyProjects] = useState([])
 
     useEffect(() => {
         setLoading(true)
-        getMyContributions()
-            .then(it => setProjects(_.get(it, "viewer.repositoriesContributedTo.nodes", [])))
-            .finally(() => setLoading(false))
+        Promise.all([
+            getMyContributions(),
+            getMyProjects()
+        ]).then(([contr, mine]) => {
+            setContributedProjects(_.get(contr, "viewer.repositoriesContributedTo.nodes", []))
+            setMyProjects(_.get(mine, "viewer.repositories.nodes", []))
+        }).finally(() => {
+            setLoading(false)
+        })
     }, [])
 
     const mainLang = (it) => _.get(it, "languages.nodes[0]", {})
@@ -75,9 +81,9 @@ const Activity = () => {
         !loading && (
             <Fade className="activity">
                 <div>Open source projects I've contributed to</div>
-                { renderProjects(_.filter(projects, it => _.toLower(_.get(it, "owner.login")) !== USERNAME)) }
+                { renderProjects(contributedProjects) }
                 <div>My open source projects</div>
-                { renderProjects(_.filter(projects, it => _.toLower(_.get(it, "owner.login")) === USERNAME && !_.get(it, "isFork", false))) }
+                { renderProjects(myProjects) }
             </Fade>
         )
     )
