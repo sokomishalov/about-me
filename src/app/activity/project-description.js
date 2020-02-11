@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import "./project-description.css"
 import ReactMarkdown from "react-markdown"
-import { Spin } from "antd";
-import { loadProjectReadme } from "../../util/github/github";
+import { Spin } from "antd"
+import { loadProjectReadme } from "../../util/github/github"
+import _ from "lodash"
 
 const ProjectDescription = ({project}) => {
 
@@ -23,7 +24,15 @@ const ProjectDescription = ({project}) => {
             <div className="project-md">
                 { loading
                     ? <div className="project-md-loader"><Spin/></div>
-                    : <ReactMarkdown source={ md } escapeHtml={ false }/> }
+                    : <ReactMarkdown source={ md }
+                                     escapeHtml={ false }
+                                     linkTarget={ "_blank" }
+                                     transformLinkUri={ (uri) => (
+                                         _.includes(uri, "://")
+                                             ? uri
+                                             : `${ project["url"] }/blob/master/${ _.replace(uri, "./", "") }`
+                                     ) }/>
+                }
             </div>
         </div>
     );
