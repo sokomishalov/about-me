@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import "./activity.css"
 import Fade from "react-reveal/Fade"
 import _ from "lodash"
-import { Card, Icon, Modal } from "antd"
+import { Card, Modal } from "antd"
 import { getMyContributions, getMyProjects } from "../../util/github/github";
 import ProjectDescription from "./project-description";
+import EyeOutlined from "@ant-design/icons/lib/icons/EyeOutlined";
+import StarOutlined from "@ant-design/icons/lib/icons/StarOutlined";
+import { ForkOutlined } from "@ant-design/icons";
 
 const Activity = () => {
 
@@ -48,17 +51,17 @@ const Activity = () => {
                         <div className="project-description">{ it["description"] }</div>
                         <div className="project-icons">
                             <div className="watchers">
-                                <Icon type="eye"/>
+                                <EyeOutlined/>
                                 <span className="caption">{ _.get(it, "watchers.totalCount") }</span>
                             </div>
 
                             <div className="stars">
-                                <Icon type="star"/>
+                                <StarOutlined/>
                                 <span className="caption">{ _.get(it, "stargazers.totalCount") }</span>
                             </div>
 
                             <div className="forks">
-                                <Icon type="fork"/>
+                                <ForkOutlined/>
                                 <span className="caption">{ _.get(it, "forks.totalCount") }</span>
                             </div>
                         </div>
