@@ -4,7 +4,6 @@ import Typist from "react-typist"
 import { GH_PAGE, USERNAME } from "../../util/consts/consts"
 import _ from "lodash"
 import { getMyAge } from "../../util/date/date";
-import { getColorByLanguage } from "../../util/github/github";
 
 const Common = ({onTypistDone = _.noop}) => (
     <div className="common">
@@ -23,25 +22,21 @@ const Common = ({onTypistDone = _.noop}) => (
                     My name is <span className="name">Mikhael Sokolov </span> aka&nbsp;
                 <span className="github-link" onClick={ () => window.open(GH_PAGE, "_blank") }>
                         { USERNAME }
-                    </span>
                 </span>
+                .
+            </span>
 
             <br/>
             <Typist.Delay ms={ 300 }/>
 
             <span>
-                Software engineer, mostly
-                <span style={ {color: getColorByLanguage("Kotlin")} }> Kotlin</span>/
-                <span style={ {color: getColorByLanguage("Java")} }>Java</span>/
-                <span style={ {color: getColorByLanguage("JavaScript")} }>JS</span>/
-                <span style={ {color: getColorByLanguage("Dart")} }>Dart</span>/
-                <span>etc.</span>
+                Software engineer. JVM/JS/Dart/Rust/etc.
             </span>
             <br/>
 
             <Typist.Delay ms={ 300 }/>
             <span>
-                    I am { getMyAge() } y.o., born and live in Moscow, Russia
+                    I am { getMyAge() } y.o., born and live in Moscow, Russia.
                 </span>
             <br/>
 

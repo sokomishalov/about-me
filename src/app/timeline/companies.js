@@ -26,7 +26,7 @@ export const COMPANIES = [
     },
     {
         name: "VTB",
-        position: "Software engineer, architect",
+        position: "Software engineer, solution architect",
         years: "2019 - till now",
         logo: VtbLogo,
         companyLink: "https://www.vtb.ru/"
