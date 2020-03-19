@@ -55,7 +55,7 @@ const Common = ({onTypistDone = _.noop}) => (
             <br/>
             <span className="fan-of">* sarcasm</span>
             <br/>
-            <span className="fan-of">* drinking vodka<Typist.Backspace count={ 14 } delay={ 500 }/>chilling out</span>
+            <span className="fan-of">* drinking vodka<Typist.Backspace count={ 14 } delay={ 500 }/>chilling</span>
             <br/>
         </Typist>
     </div>

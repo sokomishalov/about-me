@@ -1,4 +1,3 @@
-import GitHubColors from "github-colors"
 import { graphql } from "@octokit/graphql";
 
 const githubGraphRequest = graphql.defaults({
@@ -7,8 +6,6 @@ const githubGraphRequest = graphql.defaults({
         accept: "*"
     }
 });
-
-export const getColorByLanguage = (language) => GitHubColors.get(language, false).color
 
 export const getMyContributions = async () => await githubGraphRequest(myContributionsRequest)
 
