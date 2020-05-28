@@ -55,7 +55,7 @@ const myContributionsRequest = `
 const myProjectsRequest = `
 {
   viewer {
-    repositories(first: 100, privacy: PUBLIC, isFork: false) {
+    repositories(first: 100, privacy: PUBLIC, isFork: false, orderBy: {field: CREATED_AT, direction: DESC} ) {
       nodes {
         id
         name
