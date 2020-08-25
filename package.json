@@ -10,7 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "~5.14.0",
     "@fortawesome/react-fontawesome": "~0.1.11",
     "@octokit/graphql": "~4.5.3",
-    "antd": "^4.5.1",
+    "antd": "^4.6.1",
     "lodash": "~4.17.19",
     "moment": "~2.27.0",
     "react": "^16.13.1",
