@@ -6,14 +6,14 @@ import _ from "lodash"
 import { openPage } from "../../util/window/window";
 import { SOCIALS } from "./socials";
 
-const PIC_SIZE = 250;
+const PIC_SIZE = 300;
 
 const Contacts = () => (
     <div className="contacts">
         <div>Contacts</div>
         <div className="contacts-content">
             <Card hoverable
-                  style={ {width: PIC_SIZE} }
+                  style={ { width: PIC_SIZE } }
                   onClick={ () => openPage(GH_PAGE) }
                   cover={
                       <img alt=""
@@ -31,7 +31,7 @@ const Contacts = () => (
                         <Button shape="circle"
                                 size="large"
                                 className="contacts-socials-button"
-                                style={ {background: s["color"]} }
+                                style={ { background: s["color"] } }
                                 onClick={ s["onClick"] }>
                             { s["icon"] }
                         </Button>

@@ -7,7 +7,7 @@ import { getMyContributions, getMyProjects } from "../../util/github/github";
 import ProjectDescription from "./project-description";
 import EyeOutlined from "@ant-design/icons/lib/icons/EyeOutlined";
 import StarOutlined from "@ant-design/icons/lib/icons/StarOutlined";
-import { ForkOutlined } from "@ant-design/icons";
+import ForkOutlined from "@ant-design/icons/lib/icons/ForkOutlined";
 
 const Activity = () => {
 
@@ -68,7 +68,7 @@ const Activity = () => {
                         <div className="project-languages">
                             { _.map(_.get(it, "languages.nodes", []), o => (
                                 <div className="language" key={ o["color"] }>
-                                    <div className="language-color" style={ {backgroundColor: o["color"]} }/>
+                                    <div className="language-color" style={ { backgroundColor: o["color"] } }/>
                                     <div className="caption">{ o["name"] }</div>
                                 </div>
                             )) }
