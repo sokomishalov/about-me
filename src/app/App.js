@@ -27,6 +27,6 @@ const App = () => {
     )
 }
 
-const SectionDivider = () => <Divider style={ {margin: "30px 0"} }/>
+const SectionDivider = () => <Divider style={ { margin: "30px 0" } }/>
 
 export default App
