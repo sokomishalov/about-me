@@ -29,7 +29,11 @@
             &-description {
                 opacity: 0.8;
                 height: 65px;
-                margin: 7px 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
             }
 
             &-icons {

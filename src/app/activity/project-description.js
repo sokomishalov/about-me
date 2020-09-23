@@ -5,7 +5,7 @@ import { Spin } from "antd"
 import { loadProjectReadme } from "../../util/github/github"
 import _ from "lodash"
 
-const ProjectDescription = ({project}) => {
+const ProjectDescription = ({ project }) => {
 
     const [loading, setLoading] = useState(false)
     const [md, setMd] = useState("")
