@@ -78,7 +78,6 @@ const Activity = () => {
         </div>
     )
 
-
     return (
         !loading && (
             <Fade className="activity">
