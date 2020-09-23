@@ -12,6 +12,7 @@
     "@octokit/graphql": "~4.5.6",
     "antd": "^4.6.5",
     "asciidoctor": "~2.2.0",
+    "github-colors": "~2.2.19",
     "lodash": "~4.17.20",
     "moment": "~2.29.0",
     "react": "^16.13.1",
