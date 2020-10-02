@@ -2,17 +2,18 @@
 
 .sokomishalov {
 
-    font-size: $big-font-size;
-
     @media only screen and (max-width: 500px) {
         padding: 10px 10px;
+        font-size: $small-font-size;
     }
 
     @media only screen and (min-width: 500px) and (max-width: 1000px) {
         padding: 30px 50px;
+        font-size: $medium-font-size;
     }
 
     @media only screen and (min-width: 1000px) {
         padding: 50px 70px;
+        font-size: $big-font-size;
     }
 }

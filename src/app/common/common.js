@@ -32,13 +32,12 @@ const Common = ({ onTypistDone = _.noop }) => (
 
             <span>
                 Software engineer.&nbsp;
-                <span style={ { color: languageColor("Java") } }>Java</span>/
-                    <span style={ { color: languageColor("Kotlin") } }>Kotlin</span>/
-                    <span style={ { color: languageColor("JavaScript") } }>JS</span>/
-                    <span style={ { color: languageColor("Dart") } }>Dart</span>/
-                    <span style={ { color: languageColor("Rust") } }>Rust</span>/
-                    <span style={ { color: "white" } }>etc.</span>
-                </span>
+                <span style={ { color: languageColor("Java") } }>JVM</span>/
+                <span style={ { color: languageColor("JavaScript") } }>JS</span>/
+                <span style={ { color: languageColor("Dart") } }>Dart</span>/
+                <span style={ { color: languageColor("Rust") } }>Rust</span>/
+                <span style={ { color: "white" } }>etc.</span>
+            </span>
             <br/>
 
             <Typist.Delay ms={ 300 }/>
