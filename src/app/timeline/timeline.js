@@ -6,7 +6,7 @@ import { COMPANIES } from "./companies";
 
 const Timeline = () => (
     <div className="timeline">
-        <div>Timeline</div>
+        <div>Timeline so far</div>
         <Steps direction="vertical"
                labelPlacement="vertical"
                className="steps">
