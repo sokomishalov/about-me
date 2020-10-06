@@ -14,7 +14,7 @@
     "asciidoctor": "~2.2.0",
     "github-colors": "~2.2.19",
     "lodash": "~4.17.20",
-    "moment": "~2.29.0",
+    "moment": "~2.29.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-markdown": "~4.3.1",
