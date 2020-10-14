@@ -15,7 +15,7 @@
     "github-colors": "~2.2.19",
     "lodash": "~4.17.20",
     "moment": "~2.29.0",
-    "react": "^16.13.1",
+    "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-markdown": "~4.3.1",
     "react-reveal": "^1.2.2",
