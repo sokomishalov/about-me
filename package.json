@@ -9,7 +9,7 @@
     "@fortawesome/free-brands-svg-icons": "~5.15.1",
     "@fortawesome/free-solid-svg-icons": "~5.15.1",
     "@fortawesome/react-fontawesome": "~0.1.12",
-    "@octokit/graphql": "~4.5.7",
+    "@octokit/graphql": "~4.5.9",
     "antd": "^4.8.2",
     "asciidoctor": "~2.2.0",
     "github-colors": "~2.2.19",
