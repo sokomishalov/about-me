@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://sokomishalov.github.io/about-me",
   "dependencies": {
-    "@ant-design/icons": "^4.2.2",
+    "@ant-design/icons": "^4.5.0",
     "@fortawesome/fontawesome-svg-core": "~1.2.32",
     "@fortawesome/free-brands-svg-icons": "~5.15.1",
     "@fortawesome/free-solid-svg-icons": "~5.15.1",
