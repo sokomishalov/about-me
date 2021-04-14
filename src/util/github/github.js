@@ -14,7 +14,7 @@ export const loadProjectReadme = async (nameWithOwner) => {
 
 const githubGraphRequest = graphql.defaults({
     headers: {
-        authorization: `Bearer ${ process.env.REACT_APP_GITHUB_TOKEN_PART_1 }${ process.env.REACT_APP_GITHUB_TOKEN_PART_2 }`,
+        authorization: `Bearer ${ atob(process.env.REACT_APP_GITHUB_TOKEN) }`,
         accept: "*"
     }
 });

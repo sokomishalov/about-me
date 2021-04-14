@@ -20,7 +20,7 @@ const ProjectDescription = ({ project }) => {
                 setFileName(data["name"])
             })
             .finally(() => setLoading(false))
-    }, [])
+    }, [project])
 
     let projectReadme;
     if (loading) {
@@ -47,7 +47,7 @@ const ProjectDescription = ({ project }) => {
     return (
         <div className="project">
             <div className="project-desc">{ project["description"] }</div>
-            <a className="project-link" href={ project["url"] } target="_blank">{ project["url"] }</a>
+            <a className="project-link" href={ project["url"] } target="_blank" rel="noreferrer">{ project["url"] }</a>
             <div className="project-readme">
                 { projectReadme }
             </div>

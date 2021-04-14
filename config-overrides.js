@@ -1,4 +1,4 @@
-const {override: customizeCRA, fixBabelImports, disableEsLint} = require('customize-cra');
+const { override: customizeCRA, fixBabelImports, disableEsLint } = require('customize-cra');
 
 module.exports = function override(config) {
     return customizeCRA(

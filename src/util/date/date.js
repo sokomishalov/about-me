@@ -1,4 +1,4 @@
-import moment from "moment";
-import {BIRTHDAY} from "../consts/consts";
+import { DateTime } from "luxon";
+import { BIRTHDAY } from "../consts/consts";
 
-export const getMyAge = () => moment().diff(moment(BIRTHDAY, "DD.MM.YYYY"), 'years').toString();
+export const getMyAge = () => DateTime.fromFormat(BIRTHDAY, 'dd.MM.yyyy').diffNow('years').years;
