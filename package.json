@@ -11,7 +11,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@octokit/graphql": "^4.6.1",
     "antd": "^4.15.1",
-    "asciidoctor": "^2.2.3",
+    "asciidoctor": "^2.2.4",
     "github-colors": "^2.2.19",
     "lodash": "^4.17.21",
     "luxon": "^1.26.0",
