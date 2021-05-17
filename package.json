@@ -14,7 +14,7 @@
     "asciidoctor": "^2.2.3",
     "github-colors": "^2.2.19",
     "lodash": "^4.17.21",
-    "luxon": "^1.26.0",
+    "luxon": "^1.27.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-markdown": "^5.0.3",
