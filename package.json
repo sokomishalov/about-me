@@ -17,7 +17,7 @@
     "luxon": "^1.27.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-markdown": "^5.0.3",
+    "react-markdown": "^6.0.3",
     "react-reveal": "^1.2.2",
     "react-typist": "^2.0.5"
   },
