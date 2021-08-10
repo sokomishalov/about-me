@@ -6,7 +6,7 @@ import { Spin } from "antd"
 import { loadProjectReadme } from "../../util/github/github"
 import _ from "lodash"
 
-const ProjectDescription = ({ project }) => {
+const ProjectDescription = ({project}) => {
 
     const [loading, setLoading] = useState(false)
     const [readme, setReadme] = useState("")
@@ -26,14 +26,15 @@ const ProjectDescription = ({ project }) => {
     if (loading) {
         projectReadme = <div className="project-readme-loader"><Spin/></div>
     } else if (_.endsWith(fileName, "md")) {
-        projectReadme = <ReactMarkdown source={ readme }
-                                       escapeHtml={ false }
+        projectReadme = <ReactMarkdown escapeHtml={ false }
                                        linkTarget={ "_blank" }
                                        transformLinkUri={ (uri) => (
                                            _.includes(uri, "://")
                                                ? uri
                                                : `${ project["url"] }/blob/master/${ _.replace(uri, "./", "") }`
-                                       ) }/>
+                                       ) }>
+            { readme }
+        </ReactMarkdown>
     } else if (_.endsWith(fileName, "adoc")) {
         projectReadme = React.createElement("div", {
             dangerouslySetInnerHTML: {
