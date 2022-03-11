@@ -1,6 +1,7 @@
 import SberbankLogo from "../../images/sber.png"
 import VtbLogo from "../../images/vtb.png"
 import BmstuLogo from "../../images/bmstu.png"
+import MyndLogo from "../../images/mynd.png"
 
 export const COMPANIES = [
     {
@@ -27,8 +28,15 @@ export const COMPANIES = [
     {
         name: "VTB",
         position: "Software engineer, solution architect",
-        years: "2019 - till now",
+        years: "2019 - 2022",
         logo: VtbLogo,
         companyLink: "https://www.vtb.ru/"
+    },
+    {
+        name: "Mynd Management",
+        position: "Senior software engineer",
+        years: "2022 - till now",
+        logo: MyndLogo,
+        companyLink: "https://www.mynd.co/"
     },
 ]
