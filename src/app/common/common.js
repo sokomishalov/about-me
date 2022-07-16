@@ -22,10 +22,10 @@ const Common = ({ onTypistDone = _.noop }) => (
             <span>
                 My name is <span className="name">Mikhael Sokolov </span> aka&nbsp;
                 <span className="github-link" onClick={ () => window.open(GH_PAGE, "_blank") }>
-                            { USERNAME }
-                    </span>
-                    .
+                    { USERNAME }
                 </span>
+                .
+            </span>
 
             <br/>
             <Typist.Delay ms={ 300 }/>
@@ -41,7 +41,7 @@ const Common = ({ onTypistDone = _.noop }) => (
             <br/>
 
             <Typist.Delay ms={ 300 }/>
-            <span>I am { getMyAge() } y.o., born and live in Moscow, Russia.</span>
+            <span>I am { getMyAge() } y.o., born in Moscow 🇷🇺, based in Tbilisi 🇬🇪.</span>
             <br/>
 
             <Typist.Delay ms={ 300 }/>
