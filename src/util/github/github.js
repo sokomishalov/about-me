@@ -1,4 +1,4 @@
-import { graphql } from "@octokit/graphql";
+import {graphql} from "@octokit/graphql";
 import GitHubColors from "github-colors";
 
 export const languageColor = (name) => GitHubColors.get(name, null).color
@@ -22,7 +22,7 @@ const githubGraphRequest = graphql.defaults({
 const myContributionsRequest = `
 {
   viewer {
-    repositoriesContributedTo(first: 100, contributionTypes: [REPOSITORY, COMMIT, PULL_REQUEST, PULL_REQUEST_REVIEW], privacy: PUBLIC) {
+    repositoriesContributedTo(first: 100, contributionTypes: [REPOSITORY, COMMIT, PULL_REQUEST, PULL_REQUEST_REVIEW], privacy: PUBLIC, orderBy: {field: STARGAZERS, direction: DESC}) {
       nodes {
         id
         name
@@ -57,7 +57,7 @@ const myContributionsRequest = `
 const myProjectsRequest = `
 {
   viewer {
-    repositories(ownerAffiliations: OWNER, first: 100, privacy: PUBLIC, isFork: false, orderBy: {field: CREATED_AT, direction: DESC} ) {
+    repositories(ownerAffiliations: OWNER, first: 100, privacy: PUBLIC, isFork: false, orderBy: {field: STARGAZERS, direction: DESC} ) {
       nodes {
         id
         name
