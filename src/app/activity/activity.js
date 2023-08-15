@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import "./activity.css"
 import Fade from "react-reveal/Fade"
 import _ from "lodash"
-import { Card, Modal } from "antd"
-import { getMyContributions, getMyProjects } from "../../util/github/github";
+import {Card, Modal} from "antd"
+import {getMyContributions, getMyProjects} from "../../util/github/github";
 import ProjectDescription from "./project-description";
 import EyeOutlined from "@ant-design/icons/lib/icons/EyeOutlined";
 import StarOutlined from "@ant-design/icons/lib/icons/StarOutlined";
@@ -81,7 +81,7 @@ const Activity = () => {
     return (
         !loading && (
             <Fade className="activity">
-                <div>Open source projects I've contributed to</div>
+                <div>Open source projects I've contributed to (last year)</div>
                 { renderProjects(contributedProjects) }
                 <div>My open source projects</div>
                 { renderProjects(myProjects) }
