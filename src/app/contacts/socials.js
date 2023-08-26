@@ -1,10 +1,9 @@
-import { Avatar } from "antd";
-import { openPage } from "../../util/window/window";
+import {openPage} from "../../util/window/window";
 import CV from "../../images/cv.pdf";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faGithub, faInstagram, faLinkedin, faTelegram, faVk } from "@fortawesome/free-brands-svg-icons";
-import { EM_PAGE, FB_PAGE, GH_PAGE, IG_PAGE, LI_PAGE, TG_PAGE, VK_PAGE } from "../../util/consts/consts";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFacebookF, faGithub, faInstagram, faLinkedin, faTelegram, faVk} from "@fortawesome/free-brands-svg-icons";
+import {EM_PAGE, FB_PAGE, GH_PAGE, IG_PAGE, LI_PAGE, TG_PAGE, VK_PAGE} from "../../util/consts/consts";
+import {faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 
 export const SOCIALS = [
@@ -51,7 +50,7 @@ export const SOCIALS = [
         onClick: () => openPage(EM_PAGE),
     },
     {
-        icon: <Avatar style={ { backgroundColor: "rgba(43,43,43,0.67)", marginTop: -3 } }>CV</Avatar>,
+        icon: "CV",
         color: "rgba(43,43,43,0.67)",
         tip: "My CV",
         onClick: () => openPage(CV)

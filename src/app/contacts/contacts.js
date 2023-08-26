@@ -1,10 +1,10 @@
 import React from 'react'
 import "./contacts.css"
-import { Button, Card, Tooltip } from "antd"
-import { GH_PAGE } from "../../util/consts/consts"
+import {Button, Card, Tooltip} from "antd"
+import {GH_PAGE} from "../../util/consts/consts"
 import _ from "lodash"
-import { openPage } from "../../util/window/window";
-import { SOCIALS } from "./socials";
+import {openPage} from "../../util/window/window";
+import {SOCIALS} from "./socials";
 
 const PIC_SIZE = 300;
 
@@ -30,6 +30,7 @@ const Contacts = () => (
                              placement="right">
                         <Button shape="circle"
                                 size="large"
+                                type="text"
                                 className="contacts-socials-button"
                                 style={ { background: s["color"] } }
                                 onClick={ s["onClick"] }>
