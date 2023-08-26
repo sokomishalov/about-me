@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import "./App.css"
-import { Divider } from "antd"
-import Fade from "react-reveal/Fade"
+import {Divider} from "antd"
+import {Fade} from "react-awesome-reveal"
 import Timeline from "./timeline/timeline"
 import Contacts from "./contacts/contacts"
 import Activity from "./activity/activity"

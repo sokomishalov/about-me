@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import "./activity.css"
-import Fade from "react-reveal/Fade"
+import {Fade} from "react-awesome-reveal"
 import _ from "lodash"
 import {Card, Modal} from "antd"
 import {getMyContributions, getMyProjects} from "../../util/github/github";
