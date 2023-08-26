@@ -14,6 +14,7 @@ const Activity = () => {
     const [loading, setLoading] = useState(true)
     const [contributedProjects, setContributedProjects] = useState([])
     const [myProjects, setMyProjects] = useState([])
+    const [openedProject, setOpenedProject] = useState(null)
 
     useEffect(() => {
         setLoading(true)
@@ -28,17 +29,6 @@ const Activity = () => {
         })
     }, [])
 
-    const openProjectModal = (project) => {
-        Modal.info({
-            maskClosable: true,
-            width: 1000,
-            icon: null,
-            title: project["nameWithOwner"],
-            content: <ProjectDescription project={ project }/>,
-            okText: "Close"
-        });
-    }
-
     const renderProjects = (data) => (
         <div className="activity-projects">
             { _.orderBy(data, ["stargazers.totalCount", "forks.totalCount", "watchers.totalCount"], ["desc", "desc", "desc"])
@@ -46,7 +36,7 @@ const Activity = () => {
                     <Card key={ it["id"] }
                           hoverable
                           className="project"
-                          onClick={ () => openProjectModal(it) }>
+                          onClick={ () => { setOpenedProject(it) }}>
                         <div className="project-name">{ it["name"] }</div>
                         <div className="project-description">{ it["description"] }</div>
                         <div className="project-icons">
@@ -75,6 +65,20 @@ const Activity = () => {
                         </div>
                     </Card>
                 )) }
+            <Modal
+                open={!_.isEmpty(openedProject)}
+                maskClosable={true}
+                closable={true}
+                width={1000}
+                title={_.get(openedProject, "nameWithOwner", "")}
+                okText={"Close"}
+                cancelButtonProps={{style: {display: "none"}}}
+                onOk={() => setOpenedProject(null)}
+                onCancel={() => setOpenedProject(null)}
+                destroyOnClose={true}
+            >
+                <ProjectDescription project={openedProject}/>
+            </Modal>
         </div>
     )
 

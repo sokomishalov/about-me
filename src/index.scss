@@ -1,3 +1,5 @@
+@import "./styles/consts.scss";
+
 @font-face {
     font-family: 'SokoMishaLov';
     font-style: normal;
@@ -7,6 +9,8 @@
 
 body {
     margin: 0;
+    background-color: $background;
+    color: $font-color;
 }
 
 body * {

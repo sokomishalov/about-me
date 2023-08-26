@@ -17,6 +17,7 @@
         &-button:active {
             color: white;
             border: 1px solid white;
+            transform: rotate(360deg);
         }
     }
 }

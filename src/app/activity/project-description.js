@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import "./project-description.css"
 import ReactMarkdown from "react-markdown"
 import asciidoctor from "asciidoctor";
-import { Spin } from "antd"
-import { loadProjectReadme } from "../../util/github/github"
+import {Spin} from "antd"
+import {loadProjectReadme} from "../../util/github/github"
+import rehypeRaw from "rehype-raw";
 import _ from "lodash"
 
 const ProjectDescription = ({project}) => {
@@ -26,7 +27,7 @@ const ProjectDescription = ({project}) => {
     if (loading) {
         projectReadme = <div className="project-readme-loader"><Spin/></div>
     } else if (_.endsWith(fileName, "md")) {
-        projectReadme = <ReactMarkdown escapeHtml={ false }
+        projectReadme = <ReactMarkdown rehypePlugins={[rehypeRaw]}
                                        linkTarget={ "_blank" }
                                        transformLinkUri={ (uri) => (
                                            _.includes(uri, "://")

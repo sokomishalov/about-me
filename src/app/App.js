@@ -6,24 +6,27 @@ import Timeline from "./timeline/timeline"
 import Contacts from "./contacts/contacts"
 import Activity from "./activity/activity"
 import Common from "./common/common"
+import CustomThemeProvider from "../styles/CustomThemeProvider"
 
 const App = () => {
     const [typistDone, setTypistDone] = useState(false)
 
     return (
-        <div className="sokomishalov">
-            <Common onTypistDone={ () => setTypistDone(true) }/>
-            { typistDone && (
-                <Fade>
-                    <SectionDivider/>
-                    <Contacts/>
-                    <SectionDivider/>
-                    <Timeline/>
-                    <SectionDivider/>
-                    <Activity/>
-                </Fade>
-            ) }
-        </div>
+        <CustomThemeProvider>
+            <div className="sokomishalov">
+                <Common onTypistDone={() => setTypistDone(true)}/>
+                {typistDone && (
+                    <Fade>
+                        <SectionDivider/>
+                        <Contacts/>
+                        <SectionDivider/>
+                        <Timeline/>
+                        <SectionDivider/>
+                        <Activity/>
+                    </Fade>
+                )}
+            </div>
+        </CustomThemeProvider>
     )
 }
 
