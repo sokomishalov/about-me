@@ -16,7 +16,7 @@ const githubGraphRequest = graphql.defaults({
     headers: {
         authorization: `Bearer ${ atob(process.env.REACT_APP_GITHUB_TOKEN) }`,
         accept: "*"
-    }
+    },
 });
 
 const myContributionsRequest = `

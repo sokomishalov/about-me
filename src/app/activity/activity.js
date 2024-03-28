@@ -21,8 +21,8 @@ const Activity = () => {
         Promise.all([
             getMyContributions(),
             getMyProjects()
-        ]).then(([contr, mine]) => {
-            setContributedProjects(_.get(contr, "viewer.repositoriesContributedTo.nodes", []))
+        ]).then(([contributions, mine]) => {
+            setContributedProjects(_.get(contributions, "viewer.repositoriesContributedTo.nodes", []))
             setMyProjects(_.get(mine, "viewer.repositories.nodes", []))
         }).finally(() => {
             setLoading(false)

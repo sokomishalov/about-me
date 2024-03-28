@@ -22,7 +22,7 @@ const Common = ({ onTypistDone = _.noop }) => {
                     cursor={cursor}
                     onTypingDone={() => { setTyping(false); onTypistDone(); }}>
                         <span>
-                            Hi!
+                            Hey!
                         </span>
 
                 <br/>
