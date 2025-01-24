@@ -10,7 +10,7 @@ export const COMPANIES = [
         position: "Student",
         years: "2013 - 2017",
         logo: BmstuLogo,
-        companyLink: "http://www.bmstu.ru/mstu/English/"
+        companyLink: "http://www.bmstu.ru/"
     },
     {
         name: "Sberbank technology",
@@ -24,27 +24,27 @@ export const COMPANIES = [
         position: "Middle Software Engineer",
         years: "2017 - 2019",
         logo: SberbankLogo,
-        companyLink: "https://www.sberbank.ru"
+        companyLink: "https://sberbank.ru"
     },
     {
         name: "VTB",
         position: "Senior Software Engineer, Solution Architect",
         years: "2019 - 2022",
         logo: VtbLogo,
-        companyLink: "https://www.vtb.ru/"
+        companyLink: "https://vtb.ru/"
     },
     {
         name: "Mynd Management",
         position: "Senior Software Engineer",
         years: "2022 - 2024",
         logo: MyndLogo,
-        companyLink: "https://www.mynd.co/"
+        companyLink: "https://mynd.co/"
     },
     {
         name: "Roofstock",
         position: "Senior Software Engineer",
         years: "2024 - till now",
         logo: RoofstockLogo,
-        companyLink: "https://www.roofstock.com/"
+        companyLink: "https://roofstock.com/"
     },
 ]
