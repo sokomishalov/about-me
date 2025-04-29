@@ -10,7 +10,7 @@ const Timeline = () => (
         <Steps direction="vertical"
                labelPlacement="vertical"
                className="steps"
-               items={ _.map(_.reverse(COMPANIES), c => (
+               items={ _.map(COMPANIES, c => (
                    {
                        title: <div className="company-name">{ c["name"] }</div>,
                        icon: <img src={ c["logo"] } width={ 20 } height={ 20 } alt=""/>,
