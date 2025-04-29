@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown"
 import asciidoctor from "asciidoctor";
 import {Spin} from "antd"
 import {loadProjectReadme} from "../../util/github/github"
+import rehypeExternalLinks from "rehype-external-links";
 import rehypeRaw from "rehype-raw";
 import _ from "lodash"
 
@@ -27,12 +28,8 @@ const ProjectDescription = ({project}) => {
     if (loading) {
         projectReadme = <div className="project-readme-loader"><Spin/></div>
     } else if (_.endsWith(fileName, "md")) {
-        projectReadme = <ReactMarkdown rehypePlugins={[rehypeRaw]}
-                                       urlTransform={ (uri) => (
-                                           _.includes(uri, "://")
-                                               ? uri
-                                               : `${ project["url"] }/blob/master/${ _.replace(uri, "./", "") }`
-                                       ) }>
+        projectReadme = <ReactMarkdown rehypePlugins={[rehypeRaw, [rehypeExternalLinks, {target: '_blank'}]]}
+                                       urlTransform={ (uri) => (_.includes(uri, "://") ? uri : `${ project["url"] }/blob/master/${ _.replace(uri, "./", "") }`) }>
             { readme }
         </ReactMarkdown>
     } else if (_.endsWith(fileName, "adoc")) {
