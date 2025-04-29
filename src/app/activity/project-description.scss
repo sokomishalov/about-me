@@ -1,0 +1,20 @@
+.project {
+    overflow: hidden;
+
+    &-desc {
+        margin-bottom: 10px;
+    }
+
+    &-link {
+
+    }
+
+    &-readme {
+        margin-top: 15px;
+
+        &-loader {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}

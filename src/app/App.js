@@ -4,6 +4,7 @@ import {Divider} from "antd"
 import {Fade} from "react-awesome-reveal"
 import Timeline from "./timeline/timeline"
 import Contacts from "./contacts/contacts"
+import Activity from "./activity/activity"
 import Common from "./common/common"
 import CustomThemeProvider from "../styles/CustomThemeProvider"
 
@@ -20,6 +21,8 @@ const App = () => {
                         <Contacts/>
                         <SectionDivider/>
                         <Timeline/>
+                        <SectionDivider/>
+                        <Activity/>
                     </Fade>
                 )}
             </div>
