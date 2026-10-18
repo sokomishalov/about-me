@@ -23,9 +23,32 @@
         margin-left: 10px;
     }
 
-    &-skip-hint {
-        margin-top: 20px;
+    // quiet affordance: pinned top-right so it doesn't move while the text is typed,
+    // fades in after a moment and stays dim until hovered/focused
+    position: relative;
+
+    &-skip {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 2px 0;
+        color: hsla(0, 0%, 100%, .35);
         font-size: 0.6em;
-        opacity: 0.4;
+        background: none;
+        border: 0;
+        cursor: pointer;
+        opacity: 0;
+        animation: common-skip-in 0.6s ease 1.2s forwards;
+        transition: color 0.2s;
+
+        &:hover,
+        &:focus-visible {
+            color: white;
+            text-decoration: underline;
+        }
+    }
+
+    @keyframes common-skip-in {
+        to { opacity: 1; }
     }
 }

@@ -5,8 +5,19 @@ import {GH_PAGE, USERNAME} from "../../util/consts/consts"
 import {getMyAge} from "../../util/date/date";
 import {languageColor} from "../../util/github/github";
 
+const INTRO_SEEN_KEY = "about-me:intro-seen"
+
 const prefersReducedMotion = () =>
     typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches
+
+// storage can be unavailable (private mode, blocked site data) - then the intro just plays every time
+const introSeen = () => {
+    try { return localStorage.getItem(INTRO_SEEN_KEY) === "1" } catch { return false }
+}
+
+const markIntroSeen = () => {
+    try { localStorage.setItem(INTRO_SEEN_KEY, "1") } catch { /* ignore */ }
+}
 
 // Rendered both inside <Typist> (animated) and as plain markup (skipped).
 // Typist walks nested elements, but not custom components, so this must stay a plain function.
@@ -71,20 +82,18 @@ const renderIntro = (animated) => {
 }
 
 const Common = ({ onIntroDone = () => {} }) => {
-    const [animated, setAnimated] = useState(() => !prefersReducedMotion())
+    // animate only for first-time visitors who don't prefer reduced motion
+    const [animated, setAnimated] = useState(() => !prefersReducedMotion() && !introSeen())
 
     useEffect(() => {
         if (!animated) {
+            markIntroSeen()
             onIntroDone()
             return
         }
-        const skip = () => setAnimated(false)
-        window.addEventListener("keydown", skip, { once: true })
-        window.addEventListener("pointerdown", skip, { once: true })
-        return () => {
-            window.removeEventListener("keydown", skip)
-            window.removeEventListener("pointerdown", skip)
-        }
+        const skipOnEscape = (e) => { if (e.key === "Escape") setAnimated(false) }
+        window.addEventListener("keydown", skipOnEscape)
+        return () => window.removeEventListener("keydown", skipOnEscape)
     }, [animated, onIntroDone])
 
     return (
@@ -99,7 +108,11 @@ const Common = ({ onIntroDone = () => {} }) => {
                     </Typist>
                 )
                 : renderIntro(false) }
-            { animated && <div className="common-skip-hint" aria-hidden="true">press any key or click to skip</div> }
+            { animated && (
+                <button type="button" className="common-skip" onClick={ () => setAnimated(false) }>
+                    skip ›
+                </button>
+            ) }
         </section>
     );
 };

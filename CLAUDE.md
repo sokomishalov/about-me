@@ -18,7 +18,7 @@ GitHub Pages serves the `gh-pages` branch (legacy branch source). `.github/workf
 
 ## Structure
 
-- `src/app/App.jsx` — renders the `Common` intro (a `react-typist-component` typing animation) first; `Contacts`, `Timeline` and `Activity` only mount once the intro is done. The intro is skipped on any key/click and never animates under `prefers-reduced-motion`. `renderIntro()` in `common.jsx` is a plain function, not a component, because Typist walks nested elements but doesn't expand custom components.
+- `src/app/App.jsx` — renders the `Common` intro (a `react-typist-component` typing animation) first; `Contacts`, `Timeline` and `Activity` only mount once the intro is done. The intro animates only on the first visit (a `localStorage` flag, `about-me:intro-seen`, is set once it finishes or is skipped) and never under `prefers-reduced-motion`; it can be skipped via a dim "skip ›" button pinned top-right, or Esc. `renderIntro()` in `common.jsx` is a plain function, not a component, because Typist walks nested elements but doesn't expand custom components.
 - Content is data-driven:
   - Career: `src/app/timeline/companies.js`, newest first. Each company has `from`/`to` ("YYYY-MM", or "YYYY" if the month is unknown; no `to` = now) and `roles` (newest first). Roles with their own dates are promotion steps; roles without dates share the company period. Durations are computed in `src/util/date/date.js` and omitted when a boundary has no month.
   - Social links: `src/app/contacts/socials.jsx`, URLs in `src/util/consts/consts.js`.
