@@ -1,10 +1,15 @@
-@import "./styles/consts.scss";
+@use "./styles/consts" as *;
 
 @font-face {
     font-family: 'SokoMishaLov';
     font-style: normal;
     font-weight: normal;
-    src: local('SokoMishaLov'), local('SokoMishaLov Regular'), local('SokoMishaLov-Regular'), url("./fonts/JetBrainsRegular.ttf") format('ttf');
+    font-display: swap;
+    src: local('SokoMishaLov'), local('SokoMishaLov Regular'), local('SokoMishaLov-Regular'), url("./fonts/JetBrainsRegular.ttf") format('truetype');
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 body {
@@ -15,4 +20,49 @@ body {
 
 body * {
     font-family: "SokoMishaLov", monospace;
+}
+
+a {
+    color: inherit;
+}
+
+.section-title {
+    margin: 0;
+    font-size: inherit;
+    font-weight: normal;
+}
+
+.card {
+    display: block;
+    padding: 0;
+    color: $font-color;
+    text-align: left;
+    text-decoration: none;
+    background: $card-background;
+    border: 1px solid $card-border;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s, border-color 0.2s;
+
+    &:hover,
+    &:focus-visible {
+        border-color: transparent;
+        box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+    }
+}
+
+.fade-in {
+    animation: fade-in 1s ease both;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        animation: none;
+    }
 }

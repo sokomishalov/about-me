@@ -1,20 +1,26 @@
-.project {
+.project-details {
     overflow: hidden;
 
     &-desc {
         margin-bottom: 10px;
     }
 
-    &-link {
-
-    }
-
     &-readme {
         margin-top: 15px;
 
-        &-loader {
+        img {
+            max-width: 100%;
+        }
+
+        pre {
+            overflow-x: auto;
+        }
+
+        &-loader,
+        &-empty {
             display: flex;
             justify-content: center;
+            opacity: 0.6;
         }
     }
 }

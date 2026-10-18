@@ -9,3 +9,4 @@ export const IG_PAGE = "https://www.instagram.com/sokolov_mikhael/";
 export const TG_PAGE = "https://t.me/sokomishalov";
 export const EM_PAGE = "mailto:sokomishalov@mail.ru"
 export const LI_PAGE = "https://www.linkedin.com/in/sokomishalov/"
+export const CV_PAGE = `${ import.meta.env.BASE_URL }cv.pdf`

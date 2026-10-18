@@ -5,54 +5,88 @@ import MyndLogo from "../../images/mynd.png"
 import RoofstockLogo from "../../images/roofstock.png"
 import JustPlayLogo from "../../images/justplay.png"
 
+// Newest first. Dates are "YYYY-MM" (or just "YYYY" when the month is unknown), a missing `to` means "now".
+// `roles` are newest first too: a role with its own dates is a promotion step,
+// roles without dates are promotions whose exact dates aren't listed and share the company period.
 export const COMPANIES = [
     {
         name: "JustPlay",
-        position: "Senior Software Engineer",
-        years: "2025 - till now",
         logo: JustPlayLogo,
-        companyLink: "https://justplayapps.com/"
+        companyLink: "https://justplayapps.com/",
+        from: "2025",
+        roles: [
+            { title: "Staff Software Engineer", from: "2026-08" },
+            { title: "Senior Software Engineer", from: "2025", to: "2026-07" },
+        ],
     },
     {
         name: "Roofstock",
-        position: "Senior Software Engineer",
-        years: "2024 - 2025",
         logo: RoofstockLogo,
-        companyLink: "https://roofstock.com/"
+        companyLink: "https://roofstock.com/",
+        from: "2024-05",
+        to: "2025",
+        description: "Designing, developing and maintaining backend services.",
+        roles: [
+            { title: "Senior Software Engineer" },
+        ],
     },
     {
         name: "Mynd Management",
-        position: "Senior Software Engineer",
-        years: "2022 - 2024",
         logo: MyndLogo,
-        companyLink: "https://mynd.co/"
+        companyLink: "https://mynd.co/",
+        from: "2022-03",
+        to: "2024",
+        description: "Designing, developing and maintaining backend services.",
+        roles: [
+            { title: "Senior Software Engineer" },
+        ],
     },
     {
         name: "VTB",
-        position: "Senior Software Engineer, Solution Architect",
-        years: "2019 - 2022",
         logo: VtbLogo,
-        companyLink: "https://vtb.ru/"
+        companyLink: "https://vtb.ru/",
+        from: "2019-08",
+        to: "2022-03",
+        description: "Design and development of backend and frontend applications.",
+        roles: [
+            { title: "Chief Solution Architect" },
+            { title: "Leading Solution Architect" },
+        ],
     },
     {
         name: "Sberbank",
-        position: "Middle Software Engineer",
-        years: "2017 - 2019",
         logo: SberbankLogo,
-        companyLink: "https://sberbank.ru"
+        companyLink: "https://sberbank.ru",
+        from: "2018-07",
+        to: "2019-08",
+        description: "Development of backend and frontend applications.",
+        roles: [
+            { title: "Chief IT Engineer" },
+            { title: "Leading IT Engineer" },
+        ],
     },
     {
-        name: "Sberbank technology",
-        position: "Junior Software Engineer",
-        years: "2015 - 2017",
+        name: "Sberbank Technology",
         logo: SberbankLogo,
-        companyLink: "https://sbertech.ru/"
+        companyLink: "https://sbertech.ru/",
+        from: "2015-08",
+        to: "2018-07",
+        description: "Development of backend and frontend applications.",
+        roles: [
+            { title: "Leading IT Engineer" },
+            { title: "Senior IT Engineer" },
+            { title: "IT Engineer" },
+        ],
     },
     {
         name: "Bauman Moscow State Technical University",
-        position: "Student",
-        years: "2013 - 2017",
         logo: BmstuLogo,
-        companyLink: "http://www.bmstu.ru/"
+        companyLink: "http://www.bmstu.ru/",
+        from: "2013",
+        to: "2017",
+        description: "Robotics and complex automation, Systems of the Automated Designing.",
+        roles: [
+            { title: "Student" },
+        ],
     },
 ]
