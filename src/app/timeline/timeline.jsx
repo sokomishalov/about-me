@@ -1,9 +1,7 @@
-import React, {useState} from 'react'
+import React from 'react'
 import "./timeline.scss"
 import {COMPANIES} from "./companies";
 import {formatDuration, formatPeriod} from "../../util/date/date";
-
-const COLLAPSED_COUNT = 4
 
 const Duration = ({ from, to }) => {
     const duration = formatDuration(from, to)
@@ -41,28 +39,13 @@ const Company = ({ company }) => {
     )
 }
 
-const Timeline = () => {
-    const [expanded, setExpanded] = useState(false)
-    const visible = expanded ? COMPANIES : COMPANIES.slice(0, COLLAPSED_COUNT)
-
-    return (
-        <section className="timeline">
-            <h2 className="section-title">Timeline so far</h2>
-            <div className="timeline-card">
-                <ol className="timeline-companies">
-                    { visible.map(c => <Company key={ c.name } company={ c }/>) }
-                </ol>
-                { COMPANIES.length > COLLAPSED_COUNT && (
-                    <button type="button"
-                            className="timeline-toggle"
-                            aria-expanded={ expanded }
-                            onClick={ () => setExpanded(!expanded) }>
-                        { expanded ? "Collapse" : `Show all (${ COMPANIES.length })` }
-                    </button>
-                ) }
-            </div>
-        </section>
-    )
-};
+const Timeline = () => (
+    <section className="timeline">
+        <h2 className="section-title">Timeline so far</h2>
+        <ol className="timeline-card timeline-companies">
+            { COMPANIES.map(c => <Company key={ c.name } company={ c }/>) }
+        </ol>
+    </section>
+);
 
 export default Timeline;
